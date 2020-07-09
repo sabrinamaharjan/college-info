@@ -6,7 +6,7 @@ import java.util.List;
 public class College {
     private Long id;
     private String name;
-    private String phonr;
+    private String phone;
     private String deanName;
     private Date estd;
 
@@ -19,7 +19,7 @@ public class College {
     public College(Long id, String name, String phonr, String deanName, Date estd) {
         this.id = id;
         this.name = name;
-        this.phonr = phonr;
+        this.phone = phonr;
         this.deanName = deanName;
         this.estd = estd;
     }
@@ -58,13 +58,7 @@ public class College {
 
 
 
-    public String getPhonr() {
-        return phonr;
-    }
-
-    public void setPhonr(String phonr) {
-        this.phonr = phonr;
-    }
+    
 
     public String getDeanName() {
         return deanName;
@@ -87,7 +81,7 @@ public class College {
         return "College{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", phonr='" + phonr + '\'' +
+                ", phonr='" + phone + '\'' +
                 ", deanName='" + deanName + '\'' +
                 ", estd=" + estd +
                 '}';
