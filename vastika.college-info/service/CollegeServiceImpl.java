@@ -2,11 +2,19 @@ package service;
 
 import model.College;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import repository.CollegeRepository;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+@Transactional
+
 public class CollegeServiceImpl implements CollegeService {
+	
 	@Autowired
 	private CollegeRepository CollegeRepository;
 

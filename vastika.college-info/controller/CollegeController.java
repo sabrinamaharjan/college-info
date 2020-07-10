@@ -1,28 +1,29 @@
 package controller;
 
-import model.College;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import model.College;
 import service.CollegeService;
 
 import java.util.List;
 
 @Controller
-@RequestMapping("/colleges")
 public class CollegeController {
+	
 	@Autowired
 	private CollegeService collegeService;
 
-	@GetMapping
-	public String findAllCollege(Model model) {
-		final List<College> colleges = collegeService.getAllCollege();
-		model.addAttribute("colleges", colleges);
-		return "list-college";
-	}
-
-	@RequestMapping(value = "/add_college")
+	@RequestMapping("/add_college")
 	public String createCollege() {
 		return "addCollege";
 	}
@@ -43,6 +44,13 @@ public class CollegeController {
 	public String deleteCollege(@RequestParam Long id) {
 		collegeService.deleteById(id);
 		return "redirect:colleges";
+	}
+
+	@GetMapping
+	public String findAllCollege(Model model) {
+		final List<College> colleges = collegeService.getAllCollege();
+		model.addAttribute("colleges", colleges);
+		return "list-college";
 	}
 
 }
