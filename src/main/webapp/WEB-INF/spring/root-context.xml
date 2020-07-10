@@ -36,7 +36,7 @@
 
 		<property name="packagesToScan">
 			<list>
-				<value>model</value>
+				<value>com.vastika.collegeinfo.model</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -56,5 +56,5 @@
 	<tx:annotation-driven
 		transaction-manager="transactionManager" />
 	<context:component-scan
-		base-package="controller" />
+		base-package="com.vastika.collegeinfo" />
 </beans>

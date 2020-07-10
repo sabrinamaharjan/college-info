@@ -10,7 +10,7 @@
 
 
 	<context:component-scan
-		base-package="controller" />
+		base-package="com.vastika.collegeinfo.controller" />
 
 	<mvc:annotation-driven />
 
@@ -21,6 +21,7 @@
 		<property name="suffix" value=".jsp"></property>
 	</bean>
 
-
+	<mvc:resources location="/resources/"
+		mapping="/resources/**" />
 
 </beans>
