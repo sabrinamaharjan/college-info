@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface CollegeService {
 
-    College createCollege(College college);
+    void createCollege(College college);
 
     List<College> getAllCollege();
 

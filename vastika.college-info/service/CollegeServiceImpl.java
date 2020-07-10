@@ -7,38 +7,38 @@ import repository.CollegeRepository;
 import java.util.List;
 
 public class CollegeServiceImpl implements CollegeService {
-    @Autowired
-    private CollegeRepository CollegeRepository;
+	@Autowired
+	private CollegeRepository CollegeRepository;
 
-    @Override
-    public College createCollege(College College) {
-        final College returnedCollege = CollegeRepository.createCollege(College);
-        return returnedCollege;
-    }
+	@Override
+	public void createCollege(College College) {
+		CollegeRepository.createCollege(College);
 
-    @Override
-    public List<College> getAllCollege() {
-        final List<College> CollegeList = CollegeRepository.getAllCollege();
+	}
 
-        return CollegeList;
-    }
+	@Override
+	public List<College> getAllCollege() {
+		final List<College> CollegeList = CollegeRepository.getAllCollege();
 
-    @Override
-    public College getCollegeById(Long id) {
-        final College CollegeById = CollegeRepository.getCollegeById(id);
+		return CollegeList;
+	}
 
-        return CollegeById;
-    }
+	@Override
+	public College getCollegeById(Long id) {
+		final College CollegeById = CollegeRepository.getCollegeById(id);
 
-    @Override
-    public College updateById(Long id) {
-        final College updateById = CollegeRepository.updateById(id);
-        return updateById;
-    }
+		return CollegeById;
+	}
 
-    @Override
-    public void deleteById(Long id) {
-        CollegeRepository.deleteById(id);
+	@Override
+	public College updateById(Long id) {
+		final College updateById = CollegeRepository.updateById(id);
+		return updateById;
+	}
 
-    }
+	@Override
+	public void deleteById(Long id) {
+		CollegeRepository.deleteById(id);
+
+	}
 }

@@ -7,7 +7,7 @@ import java.util.List;
 public interface CollegeRepository {
 
     //crud
-    College createCollege(College college);
+    void createCollege(College college);
 
     List<College> getAllCollege();
 

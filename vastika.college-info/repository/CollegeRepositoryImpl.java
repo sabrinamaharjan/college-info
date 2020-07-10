@@ -8,14 +8,20 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import com.vastika.smd.model.User;
-import com.vastika.smd.util.HibernateUtil;
 
+import model.College;
+import util.HibernateUtil;
+
+@Repository
 public class CollegeRepositoryImpl implements CollegeRepository {
 
+	@Autowired
+	private SessionFactory sessionFactory;
+
 	@Override
-	public College createCollege(College College) {
+	public void createCollege(College college) {
 		Session session = HibernateUtil.getSession(sessionFactory);
+		session.save(college);
 	}
 
 	@Override

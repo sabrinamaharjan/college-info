@@ -12,36 +12,37 @@ import java.util.List;
 @Controller
 @RequestMapping("/colleges")
 public class CollegeController {
-    @Autowired
-    private CollegeService collegeService;
+	@Autowired
+	private CollegeService collegeService;
 
-    @GetMapping
-    public String findAllCollege(Model model){
-        final List<College> colleges = collegeService.getAllCollege();
-        model.addAttribute("colleges",colleges);
-        return "list-college";
-    }
+	@GetMapping
+	public String findAllCollege(Model model) {
+		final List<College> colleges = collegeService.getAllCollege();
+		model.addAttribute("colleges", colleges);
+		return "list-college";
+	}
 
-    @RequestMapping(value="/add_college")
-    public String createCollege(@RequestBody College college){
-        final College returnedCollege = collegeService.createCollege(college);
-        return "redirect:colleges";
-    }
+	@RequestMapping(value = "/add_college")
+	public String createCollege() {
+		return "addCollege";
+	}
 
-    @PutMapping
-    public String updateCollege(@RequestParam Long id){
-        final College returnedCollege = collegeService.updateById(id);
-        return "redirect:colleges";
-    }
+	@RequestMapping(value = "/save_college", method = RequestMethod.POST)
+	public String saveCollege(@ModelAttribute College college) {
+		collegeService.createCollege(college);
+		return "addCollege";
+	}
 
-    @DeleteMapping
-    public String deleteCollege(@RequestParam Long id){
-       collegeService.deleteById(id);
-        return "redirect:colleges";
-    }
+	@PutMapping
+	public String updateCollege(@RequestParam Long id) {
+		final College returnedCollege = collegeService.updateById(id);
+		return "redirect:colleges";
+	}
 
-
-
-
+	@DeleteMapping
+	public String deleteCollege(@RequestParam Long id) {
+		collegeService.deleteById(id);
+		return "redirect:colleges";
+	}
 
 }
