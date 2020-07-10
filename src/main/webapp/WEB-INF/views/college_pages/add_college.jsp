@@ -13,22 +13,22 @@
 			<fieldset>
 				<legend> College Registration Form</legend>
 				<div>
-					<label> College's Name</label> <input type="text" name="userName">
+					<label> College's Name</label> <input type="text" name="name">
 				</div>
 
 				<div>
 					Contact Information
+
 					<div>
-						<label> Email</label> <input type="text" name="email">
+						<label> Phone Number</label> <input type="number" name="phone">
 					</div>
 					<div>
-						<label> Password</label> <input type="password" name="password">
-					</div>
-					<div>
-						<label> Mobile Number</label> <input type="number" name="mobileNo">
+						<label> Dean's Name</label> <input type="text" name="deanName">
 					</div>
 				</div>
-
+				<div>
+					<label> Established Date</label> <input type="date" name="estd">
+				</div>
 
 
 
@@ -54,9 +54,7 @@
 
 
 
-				<div>
-					<label> DOB</label> <input type="date" name="dob">
-				</div>
+
 				<div>
 					<div>
 						<label style="font-weight: bold;">Address</label><br> <label>

@@ -3,11 +3,14 @@ package model;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class College {
 	private Long id;
 	private String name;
 	private String phone;
 	private String deanName;
+	@DateTimeFormat(pattern = "yyyy-mm-dd")
 	private Date estd;
 
 	private Address address;
