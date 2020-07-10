@@ -36,12 +36,12 @@
 
 		<property name="packagesToScan">
 			<list>
-				<value>com.vastika.smd.model</value>
+				<value>model</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
 			<props>
-				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
 				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
 				<prop key="hibernate.show_sql">true</prop>
 			</props>
@@ -56,5 +56,5 @@
 	<tx:annotation-driven
 		transaction-manager="transactionManager" />
 	<context:component-scan
-		base-package="com.vastika.smd" />
+		base-package="controller" />
 </beans>

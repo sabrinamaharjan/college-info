@@ -1,33 +1,40 @@
 package repository;
 
-import model.College;
-
 import java.util.List;
 
-public class CollegeRepositoryImpl implements CollegeRepository{
+import org.hibernate.Criteria;
+import org.hibernate.Hibernate;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import com.vastika.smd.model.User;
+import com.vastika.smd.util.HibernateUtil;
 
-    @Override
-    public College createCollege(College College) {
-        return null;
-    }
+public class CollegeRepositoryImpl implements CollegeRepository {
 
-    @Override
-    public List<College> getAllCollege() {
-        return null;
-    }
+	@Override
+	public College createCollege(College College) {
+		Session session = HibernateUtil.getSession(sessionFactory);
+	}
 
-    @Override
-    public College getCollegeById(Long id) {
-        return null;
-    }
+	@Override
+	public List<College> getAllCollege() {
+		return null;
+	}
 
-    @Override
-    public College updateById(Long id) {
-        return null;
-    }
+	@Override
+	public College getCollegeById(Long id) {
+		return null;
+	}
 
-    @Override
-    public void deleteById(Long id) {
+	@Override
+	public College updateById(Long id) {
+		return null;
+	}
 
-    }
+	@Override
+	public void deleteById(Long id) {
+
+	}
 }

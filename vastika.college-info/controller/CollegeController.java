@@ -22,7 +22,7 @@ public class CollegeController {
         return "list-college";
     }
 
-    @PostMapping
+    @RequestMapping(value="/add_college")
     public String createCollege(@RequestBody College college){
         final College returnedCollege = collegeService.createCollege(college);
         return "redirect:colleges";
